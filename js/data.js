@@ -33,3 +33,5 @@ const states = [
         "round_button": "Start Over"
     }
 ]
+
+// define object with html info for each of the 4 possible html elements per state?

@@ -3,8 +3,8 @@ const main_text = document.getElementById('main_text');
 const symbol_container = document.getElementById('symbol_container');
 const rectangle_button = document.getElementById('rectangle_button');
 const extra_text = document.getElementById('extra_text');
-const round_button = document.getElementById('round_button');
-const round_button_icon = document.getElementById('round_button_icon');
+// const round_button = document.getElementById('round_button');
+const icon = document.getElementById('icon');
 
 // variable to keep track of current state to determine what data gets used
 let state = 0;
@@ -57,7 +57,7 @@ function populate_html() {
     } else {
         extra_text.textContent = "";
     }
-   round_button_icon.setAttribute("class", "fa fa-2x text-dark " + content[state].round_button_icon);
+   icon.setAttribute("class", "fa fa-2x text-dark " + content[state].icon);
 }
 
 populate_html();
@@ -77,7 +77,7 @@ document.addEventListener("keydown", event => key_press(event));
 rectangle_button.addEventListener("click", function () { change_state(1) });
 
 // trigger state change and update html elements according to round button press
-round_button.addEventListener("click", function () {
+icon.addEventListener("click", function () {
     if (state === 0) {
         state = 1;
     } else {

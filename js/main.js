@@ -32,9 +32,10 @@ function random_symbol() {
 // or (mostly) randomly pair numbers with symbols (slide 5)
 function populate_html() {
     if (content[state].main_text) {
-        symbol_container.innerHTML = "";
+        symbol_container.classList.add("d-none");
         main_text.textContent = content[state].main_text;
     } else {
+        symbol_container.classList.remove("d-none");
         main_text.textContent = "";
         for (i = 0; i <= 99; i++) {
             let next_line = document.createElement('h1');

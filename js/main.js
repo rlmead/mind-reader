@@ -41,7 +41,7 @@ function populate_html() {
         symbol_col.classList.remove("d-none");
         main_text.textContent = "";
         for (i = 0; i <= 99; i++) {
-            let next_line = document.createElement('h1');
+            let next_line = document.createElement('h2');
             if (i % 9 === 0) {
                 next_line.textContent = i.toString() + " - &";
             } else {

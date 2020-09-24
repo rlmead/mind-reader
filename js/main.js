@@ -1,6 +1,7 @@
 // constants for accessing document elements
 const main_text = document.getElementById('main_text');
-const symbol_container = document.getElementById('symbol_container');
+const symbol_col = document.getElementById('symbol_col');
+const header_col = document.getElementById('header_col');
 const rectangle_button = document.getElementById('rectangle_button');
 const extra_text = document.getElementById('extra_text');
 // const round_button = document.getElementById('round_button');
@@ -32,12 +33,12 @@ function random_symbol() {
 // or (mostly) randomly pair numbers with symbols (slide 5)
 function populate_html() {
     if (content[state].main_text) {
-        symbol_container.classList.add("d-none");
-        header_container.classList.remove("d-none");
+        symbol_col.classList.add("d-none");
+        header_col.classList.remove("d-none");
         main_text.textContent = content[state].main_text;
     } else {
-        header_container.classList.add("d-none");
-        symbol_container.classList.remove("d-none");
+        header_col.classList.add("d-none");
+        symbol_col.classList.remove("d-none");
         main_text.textContent = "";
         for (i = 0; i <= 99; i++) {
             let next_line = document.createElement('h1');
@@ -46,7 +47,7 @@ function populate_html() {
             } else {
                 next_line.textContent = i.toString() + " - " + random_symbol();
             }
-            symbol_container.appendChild(next_line);
+            symbol_col.appendChild(next_line);
         }
     }
     if (content[state].rectangle_button) {

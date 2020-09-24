@@ -29,6 +29,7 @@ function random_symbol() {
 }
 
 // function to populate html elements according to data in content object at state index
+// or (mostly) randomly pair numbers with symbols (slide 5)
 function populate_html() {
     if (content[state].main_text) {
         symbol_container.innerHTML = "";
@@ -36,11 +37,11 @@ function populate_html() {
     } else {
         main_text.textContent = "";
         for (i = 0; i <= 99; i++) {
-            let next_line = document.createElement('h5');
+            let next_line = document.createElement('h1');
             if (i % 9 === 0) {
-                next_line.textContent = i.toString() + " &";
+                next_line.textContent = i.toString() + " - &";
             } else {
-                next_line.textContent = i.toString() + " " + random_symbol();
+                next_line.textContent = i.toString() + " - " + random_symbol();
             }
             symbol_container.appendChild(next_line);
         }
@@ -53,6 +54,8 @@ function populate_html() {
     }
     if (content[state].extra_text) {
         extra_text.textContent = content[state].extra_text;
+    } else {
+        extra_text.textContent = "";
     }
     round_button_icon.setAttribute("class", "fa fa-6x text-dark " + content[state].round_button_icon);
 }

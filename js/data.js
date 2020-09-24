@@ -5,7 +5,7 @@ const content = [
         "round_button": "fas fa-arrow-alt-circle-right"
     },
     {
-        "main_text": "Pick a number from 01 to 99.",
+        "main_text": "Pick a number from 1 to 99.",
         "rectangle_button": "Next",
         "extra_text": "Click \"next\" after you've chosen your number.",
         "round_button": "fa fa-redo-alt"
@@ -13,7 +13,7 @@ const content = [
     {
         "main_text": "Add both digits together to get a new number.",
         "rectangle_button": "Next",
-        "extra_text": "For example, 14: 1 + 4 = 5\nClick \"next\" to proceed.",
+        "extra_text": "For example, 14: 1 + 4 = 5. Click \"next\" to proceed.",
         "round_button": "fa fa-redo-alt"
     },
     {

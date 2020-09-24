@@ -19,7 +19,7 @@ const content = [
     {
         "main_text": "Subtract your new number from your original number.",
         "rectangle_button": "Next",
-        "extra_text": "For example: 14 - 5 = 9\nClick \"next\" to proceed.",
+        "extra_text": "For example: 14 - 5 = 9. Click \"next\" to proceed.",
         "icon": "fa-redo"
     },
     {

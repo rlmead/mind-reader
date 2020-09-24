@@ -17,6 +17,7 @@ function change_state(x) {
     } else {
         state += x;
     }
+    populate_html();
 }
 
 // !function to generate main_text content for slide 5
@@ -48,13 +49,19 @@ let key_press = function (event) {
     } else if (event.keyCode === 39) {
         change_state(1);
     }
-    populate_html();
 }
 
 document.addEventListener("keydown", event => key_press(event));
 
 // !trigger state change and update html elements according to rectangle button press
+rectangle_button.addEventListener("click", function () { change_state(1) });
 
 // !trigger state change and update html elements according to round button press
 
-
+// round_button.addEventListener("click", function () {
+//     if (state === 0) {
+//         state = 1;
+//     } else {
+//         state = 0;
+//     }
+// })

@@ -11,7 +11,7 @@ let state = 0;
 function change_state(x) {
     // ensure the number stays between 0 and 5 for indices of content object
     if (state === 0 && x === -1) {
-        state = 5;
+        state = 0;
     } else if (state === 5 && x === 1) {
         state = 0;
     } else {
@@ -42,7 +42,6 @@ function populate_html() {
 populate_html();
 
 // trigger state change and update html elements according to arrow keypress
-// !something is broken here
 let key_press = function (event) {
     if (event.keyCode === 37) {
         change_state(-1);

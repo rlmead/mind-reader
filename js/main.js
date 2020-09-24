@@ -33,8 +33,10 @@ function random_symbol() {
 function populate_html() {
     if (content[state].main_text) {
         symbol_container.classList.add("d-none");
+        header_container.classList.remove("d-none");
         main_text.textContent = content[state].main_text;
     } else {
+        header_container.classList.add("d-none");
         symbol_container.classList.remove("d-none");
         main_text.textContent = "";
         for (i = 0; i <= 99; i++) {

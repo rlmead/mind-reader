@@ -33,6 +33,3 @@ const content = [
         "round_button": "fa fa-redo-alt"
     }
 ]
-
-// define object with html info for each of the 4 possible html elements per state?
-// deciding against this, not sure how the js will parse the html stored as json

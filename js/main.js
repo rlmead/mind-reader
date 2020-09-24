@@ -57,7 +57,7 @@ function populate_html() {
     } else {
         extra_text.textContent = "";
     }
-   round_button_icon.setAttribute("class", "fa fa-4x text-dark " + content[state].round_button_icon);
+   round_button_icon.setAttribute("class", "fa fa-2x text-dark " + content[state].round_button_icon);
 }
 
 populate_html();

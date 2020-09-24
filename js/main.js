@@ -1,5 +1,6 @@
 // constants for accessing document elements
 const main_text = document.getElementById('main_text');
+const symbol_container = document.getElementById('symbol_container');
 const rectangle_button = document.getElementById('rectangle_button');
 const extra_text = document.getElementById('extra_text');
 const round_button = document.getElementById('round_button');
@@ -21,13 +22,29 @@ function change_state(x) {
     populate_html();
 }
 
-// !function to generate main_text content for slide 5
+// function to generate main_text content for slide 5
+function random_symbol() {
+    let symbols = ["!", "@", "#", "$", "%", "^", "*", "{", "?"];
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
 
 // function to populate html elements according to data in content object at state index
 function populate_html() {
     if (content[state].main_text) {
+        symbol_container.innerHTML = "";
         main_text.textContent = content[state].main_text;
-    } // !else - fill in with the numbers and (mostly) randomly-generated symbols
+    } else {
+        main_text.textContent = "";
+        for (i = 0; i <= 99; i++) {
+            let next_line = document.createElement('h5');
+            if (i % 9 === 0) {
+                next_line.textContent = i.toString() + " &";
+            } else {
+                next_line.textContent = i.toString() + " " + random_symbol();
+            }
+            symbol_container.appendChild(next_line);
+        }
+    }
     if (content[state].rectangle_button) {
         rectangle_button.textContent = content[state].rectangle_button;
         rectangle_button.classList.remove("d-none");
@@ -37,7 +54,7 @@ function populate_html() {
     if (content[state].extra_text) {
         extra_text.textContent = content[state].extra_text;
     }
-   round_button_icon.setAttribute("class", "fa fa-6x text-dark " + content[state].round_button_icon);
+    round_button_icon.setAttribute("class", "fa fa-6x text-dark " + content[state].round_button_icon);
 }
 
 populate_html();

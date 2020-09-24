@@ -3,6 +3,7 @@ const main_text = document.getElementById('main_text');
 const rectangle_button = document.getElementById('rectangle_button');
 const extra_text = document.getElementById('extra_text');
 const round_button = document.getElementById('round_button');
+const round_button_icon = document.getElementById('round_button_icon');
 
 // variable to keep track of current state to determine what data gets used
 let state = 0;
@@ -36,8 +37,7 @@ function populate_html() {
     if (content[state].extra_text) {
         extra_text.textContent = content[state].extra_text;
     }
-    round_button.setAttribute("class", "fa fa-6x text-dark " + content[state].round_button);
-
+   round_button_icon.setAttribute("class", "fa fa-6x text-dark " + content[state].round_button_icon);
 }
 
 populate_html();
@@ -53,15 +53,15 @@ let key_press = function (event) {
 
 document.addEventListener("keydown", event => key_press(event));
 
-// !trigger state change and update html elements according to rectangle button press
+// trigger state change and update html elements according to rectangle button press
 rectangle_button.addEventListener("click", function () { change_state(1) });
 
-// !trigger state change and update html elements according to round button press
-
-// round_button.addEventListener("click", function () {
-//     if (state === 0) {
-//         state = 1;
-//     } else {
-//         state = 0;
-//     }
-// })
+// trigger state change and update html elements according to round button press
+round_button.addEventListener("click", function () {
+    if (state === 0) {
+        state = 1;
+    } else {
+        state = 0;
+    }
+    populate_html();
+})

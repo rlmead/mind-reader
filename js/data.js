@@ -1,5 +1,5 @@
 // define an array of objects with the data to populate the element at each state
-const states = [
+const content = [
     {
         "main_text": "I can read your mind!",
         "round_button": "fas fa-arrow-alt-circle-right"

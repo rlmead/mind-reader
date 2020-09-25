@@ -13,13 +13,13 @@ const content = [
     {
         "main_text": "Add both digits together to get a new number.",
         "rectangle_button": "Next",
-        "extra_text": "For example, 14: 1 + 4 = 5. Click \"next\" to proceed.",
+        "extra_text": "For example, 14: 1 + 4 = 5.<br />Click \"next\" to proceed.",
         "icon": "fa-undo"
     },
     {
         "main_text": "Subtract your new number from your original number.",
         "rectangle_button": "Next",
-        "extra_text": "For example: 14 - 5 = 9. Click \"next\" to proceed.",
+        "extra_text": "For example: 14 - 5 = 9.<br />Click \"next\" to proceed.",
         "icon": "fa-undo"
     },
     {

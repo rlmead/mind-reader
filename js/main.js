@@ -29,21 +29,24 @@ function random_symbol() {
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+let fixed_symbol;
+
 // function to populate html elements according to data in content object at state index
 // or (mostly) randomly pair numbers with symbols (slide 5)
 function populate_html() {
     if (content[state].main_text) {
         symbol_col.classList.add("d-none");
         header_col.classList.remove("d-none");
-        main_text.textContent = content[state].main_text;
+        main_text.textContent = content[state].main_text.replace("&",fixed_symbol);
     } else {
         header_col.classList.add("d-none");
         symbol_col.classList.remove("d-none");
         main_text.textContent = "";
+        fixed_symbol = random_symbol();
         for (i = 0; i <= 99; i++) {
             let next_line = document.createElement('h2');
             if (i % 9 === 0) {
-                next_line.textContent = i.toString() + " - &";
+                next_line.textContent = i.toString() + " - " + fixed_symbol;
             } else {
                 next_line.textContent = i.toString() + " - " + random_symbol();
             }
@@ -57,9 +60,9 @@ function populate_html() {
         rectangle_button.classList.add("d-none");
     }
     if (content[state].extra_text) {
-        extra_text.textContent = content[state].extra_text;
+        extra_text.innerHTML = content[state].extra_text.replace("&",fixed_symbol);
     } else {
-        extra_text.textContent = "";
+        extra_text.innerHTML = "";
     }
    icon.setAttribute("class", "fa fa-2x text-dark " + content[state].icon);
 }

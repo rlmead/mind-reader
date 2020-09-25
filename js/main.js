@@ -57,9 +57,9 @@ function populate_html() {
         rectangle_button.classList.add("d-none");
     }
     if (content[state].extra_text) {
-        extra_text.textContent = content[state].extra_text;
+        extra_text.innerHTML = content[state].extra_text;
     } else {
-        extra_text.textContent = "";
+        extra_text.innerHTML = "";
     }
    icon.setAttribute("class", "fa fa-2x text-dark " + content[state].icon);
 }

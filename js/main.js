@@ -42,6 +42,7 @@ function populate_html() {
         header_col.classList.add("d-none");
         symbol_col.classList.remove("d-none");
         main_text.textContent = "";
+        symbol_col.innerHTML = "";
         fixed_symbol = random_symbol();
         for (i = 0; i <= 99; i++) {
             let next_line = document.createElement('h2');
